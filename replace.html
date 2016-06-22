@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ReplaceMonthCode</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .textarea0{
+            width:1000px;
+            height:200px;
+            padding: 10px;
+            margin-left:10%;
+            margin-top:5%;
+            font-size:1rem;
+            background-color:#eee;
+        }
+        .btn{
+            position:absolute;
+            left:10%;
+            top:320px;
+            padding-right:150px;
+        }
+        .resultp{
+            font-size:1rem;
+            width:80%;
+            margin-left:10%;
+            margin-top:100px;
+            padding:20px;
+            text-align: center;
+            border:1px solid #000;
+        }
+        #result{
+            width:70%;
+            height:300px;
+            margin-left:10%;
+            margin-top:100px;
+            padding:20px;
+            font-size:1.1rem;
+            border:1px solid #000;
+        }
+        .monthc{
+            margin-bottom:10px;
+            margin-right:20px;
+            width:80px;
+            height:30px;
+            cursor: pointer;
+            background-color:#e8f4ff;
+            border-radius:10px;
+            outline:none;
+        }
+        .monthc:hover{
+            background-color:orange;
+        }
+        .para{
+            margin-left:10%;
+            position:absolute;
+            font-size:1.5rem;
+            top:2%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="para">201506的URL</p>
+        <form id="f1" name="f1">
+            <textarea id="area" name="textarea" class="textarea0" placeholder="请输入URL">
+                
+            </textarea>
+            <div class="btn" id="btn">
+            <input name="btn" class="monthc" type="button" value="201605" onclick="javascript:replacemonth1('date=1462032000000',this)">
+            <input name="btn" class="monthc" type="button" value="201604" onclick="javascript:replacemonth1('date=1459440000000',this)">
+            <input name="btn" class="monthc" type="button" value="201603" onclick="javascript:replacemonth1('date=1456761600000',this)">
+            <input name="btn" class="monthc" type="button" value="201602" onclick="javascript:replacemonth1('date=1454256000000',this)">
+            <input name="btn" class="monthc" type="button" value="201601" onclick="javascript:replacemonth1('date=1451577600000',this)">
+            <input name="btn" class="monthc" type="button" value="201512" onclick="javascript:replacemonth1('date=1448899200000',this)">
+            <input name="btn" class="monthc" type="button" value="201511" onclick="javascript:replacemonth1('date=1446307200000',this)">
+            <input name="btn" class="monthc" type="button" value="201510" onclick="javascript:replacemonth1('date=1443628800000',this)">
+            <input name="btn" class="monthc" type="button" value="201509" onclick="javascript:replacemonth1('date=1441036800000',this)">
+            <input name="btn" class="monthc" type="button" value="201508" onclick="javascript:replacemonth1('date=1438358400000',this)">
+            <input name="btn" class="monthc" type="button" value="201507" onclick="javascript:replacemonth1('date=1435680000000',this)">
+            <input name="btn" class="monthc" type="button" value="201506" onclick="javascript:replacemonth1('date=1433088000000',this)">
+            <input name="btn" class="monthc" type="button" value="201505" onclick="javascript:replacemonth1('date=1430409600000',this)">
+            <input name="btn" class="monthc" type="button" value="201504" onclick="javascript:replacemonth1('date=1427817600000',this)">
+            <input name="btn" class="monthc" type="button" value="201503" onclick="javascript:replacemonth1('date=1425139200000',this)">
+            <input name="btn" class="monthc" type="button" value="201502" onclick="javascript:replacemonth1('date=1422720000000',this)">
+            <input name="btn" class="monthc" type="button" value="201501" onclick="javascript:replacemonth1('date=1420041600000',this)">
+            <input name="btn" class="monthc" type="button" value="201412" onclick="javascript:replacemonth1('date=1417363200000',this)">
+            </div>
+        </form>
+    </div>
+    
+        <textarea id="result">
+        </textarea>
+    
+    <script>
+        //替换月份内容
+        function replacemonth1(num,abc){
+            var texta=document.getElementById("area").value;
+            var a=document.getElementById("result");
+            var re= new RegExp("date=1464710400000","g");
+            a.innerHTML =texta.replace(re,num);
+            abc.style.background="orange";
+            document.getElementById("result").select();
+        }
+
+    </script>
+</body>
+</html>
